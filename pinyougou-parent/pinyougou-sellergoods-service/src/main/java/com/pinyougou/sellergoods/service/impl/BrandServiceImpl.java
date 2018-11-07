@@ -1,9 +1,8 @@
 package com.pinyougou.sellergoods.service.impl;
-
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -14,82 +13,97 @@ import com.pinyougou.pojo.TbBrandExample.Criteria;
 import com.pinyougou.sellergoods.service.BrandService;
 
 import entity.PageResult;
-import entity.Result;
 
+/**
+ * 服务实现层
+ * @author Administrator
+ *
+ */
 @Service
-public class BrandServiceImpl implements BrandService{
+public class BrandServiceImpl implements BrandService {
 
 	@Autowired
-	private TbBrandMapper  brandMapper;
+	private TbBrandMapper brandMapper;
 	
+	/**
+	 * 查询全部
+	 */
 	@Override
 	public List<TbBrand> findAll() {
-		return brandMapper.selectByExample(new TbBrandExample());
+		return brandMapper.selectByExample(null);
 	}
-	
-	@Override
-	public PageResult findPage(Integer pageNum,Integer pageSize) {
-		PageHelper.startPage(pageNum, pageSize);
-		Page<TbBrand> page =  (Page<TbBrand>) brandMapper.selectByExample(new TbBrandExample());
-		
-		return new PageResult(page.getTotal(),page.getResult());
-	}
-	
-	//增加品牌
-	@Override
-	public Result addBrand(TbBrand brand){
-		try{
-			brandMapper.insert(brand);
-			return new Result(true, "添加成功");
-		}catch(Exception ex){
-			return new Result(false, "添加失败");
-		}
-	}
-	//修改品牌
-	@Override
-	public Result updateBrand(TbBrand brand){
-		try{
-			brandMapper.updateByPrimaryKey(brand);
-			return new Result(true, "修改成功");
-		}catch(Exception ex){
-			return new Result(false, "修改失败");
-		}
-	}
-	//删除品牌
-	@Override
-	public Result delBrand(Long[] ids){
-		try{
-			for (Long id : ids) {
-				brandMapper.deleteByPrimaryKey(id);
-			}
-			return new Result(true, "删除成功");
-		}catch(Exception ex){
-			return new Result(false, "删除失败");
-		}
-	}
-	//根据id查询指定品牌
-	@Override
-	public TbBrand getBrandById(Long id){
-			return brandMapper.selectByPrimaryKey(id);
-	}
-	//条件查询
-	@Override
-	public PageResult searchBrand(Integer pageNum,Integer pageSize,TbBrand brand) {
-		PageHelper.startPage(pageNum, pageSize);
-		TbBrandExample brandExample = new TbBrandExample();
-		Criteria criteria = brandExample.createCriteria();
-		
-		if(brand!=null&&brand.getName()!=null&&!brand.getName().equals("")){
-			criteria.andNameLike("%"+brand.getName()+"%");
-		}
-		if(brand!=null&&brand.getFirstChar()!=null&&!brand.getFirstChar().equals("")){
-			criteria.andFirstCharEqualTo(brand.getFirstChar());
-		}
-		
-		Page<TbBrand> page =  (Page<TbBrand>) brandMapper.selectByExample(brandExample);
-		
-		return new PageResult(page.getTotal(),page.getResult());
-	}
-	
 
+	/**
+	 * 按分页查询
+	 */
+	@Override
+	public PageResult findPage(int pageNum, int pageSize) {
+		PageHelper.startPage(pageNum, pageSize);		
+		Page<TbBrand> page=   (Page<TbBrand>) brandMapper.selectByExample(null);
+		return new PageResult(page.getTotal(), page.getResult());
+	}
+
+	/**
+	 * 增加
+	 */
+	@Override
+	public void add(TbBrand brand) {
+		brandMapper.insert(brand);		
+	}
+
+	
+	/**
+	 * 修改
+	 */
+	@Override
+	public void update(TbBrand brand){
+		brandMapper.updateByPrimaryKey(brand);
+	}	
+	
+	/**
+	 * 根据ID获取实体
+	 * @param id
+	 * @return
+	 */
+	@Override
+	public TbBrand findOne(Long id){
+		return brandMapper.selectByPrimaryKey(id);
+	}
+
+	/**
+	 * 批量删除
+	 */
+	@Override
+	public void delete(Long[] ids) {
+		for(Long id:ids){
+			brandMapper.deleteByPrimaryKey(id);
+		}		
+	}
+	
+	
+		@Override
+	public PageResult findPage(TbBrand brand, int pageNum, int pageSize) {
+		PageHelper.startPage(pageNum, pageSize);
+		
+		TbBrandExample example=new TbBrandExample();
+		Criteria criteria = example.createCriteria();
+		
+		if(brand!=null){			
+						if(brand.getName()!=null && brand.getName().length()>0){
+				criteria.andNameLike("%"+brand.getName()+"%");
+			}
+			if(brand.getFirstChar()!=null && brand.getFirstChar().length()>0){
+				criteria.andFirstCharLike("%"+brand.getFirstChar()+"%");
+			}
+	
+		}
+		
+		Page<TbBrand> page= (Page<TbBrand>)brandMapper.selectByExample(example);		
+		return new PageResult(page.getTotal(), page.getResult());
+	}
+	//查询品牌列表   只有 名字
+	@Override
+	public List<Map> selectOptionList(){
+		return brandMapper.selectOptionList();
+	}
 }

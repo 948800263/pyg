@@ -1,6 +1,8 @@
 package com.pinyougou.sellergoods.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -11,6 +13,7 @@ import com.pinyougou.pojo.TbSellerExample.Criteria;
 import com.pinyougou.sellergoods.service.SellerService;
 
 import entity.PageResult;
+import entity.Result;
 
 /**
  * 服务实现层
@@ -22,6 +25,19 @@ public class SellerServiceImpl implements SellerService {
 
 	@Autowired
 	private TbSellerMapper sellerMapper;
+	
+	
+	/**
+	 * 更改狀態
+	 * 
+	 * */
+	@Override
+	public void updateStatus(String sellerId,String status){
+		TbSeller seller = sellerMapper.selectByPrimaryKey(sellerId);
+		seller.setStatus(status);
+		sellerMapper.updateByPrimaryKey(seller);
+		
+	}
 	
 	/**
 	 * 查询全部
@@ -46,6 +62,10 @@ public class SellerServiceImpl implements SellerService {
 	 */
 	@Override
 	public void add(TbSeller seller) {
+		//加密操作
+		BCryptPasswordEncoder  bce = new BCryptPasswordEncoder();
+		String password = bce.encode(seller.getPassword());
+		seller.setPassword(password);
 		sellerMapper.insert(seller);		
 	}
 
@@ -64,17 +84,17 @@ public class SellerServiceImpl implements SellerService {
 	 * @return
 	 */
 	@Override
-	public TbSeller findOne(Long id){
-		return sellerMapper.selectByPrimaryKey(id.toString());
+	public TbSeller findOne(String id){
+		return sellerMapper.selectByPrimaryKey(id);
 	}
 
 	/**
 	 * 批量删除
 	 */
 	@Override
-	public void delete(Long[] ids) {
-		for(Long id:ids){
-			sellerMapper.deleteByPrimaryKey(id.toString());
+	public void delete(String[] ids) {
+		for(String id:ids){
+			sellerMapper.deleteByPrimaryKey(id);
 		}		
 	}
 	

@@ -26,6 +26,7 @@ app.controller('sellerController' ,function($scope,$controller   ,sellerService)
 	$scope.findOne=function(id){				
 		sellerService.findOne(id).success(
 			function(response){
+				$scope.shenhe=id
 				$scope.entity= response;					
 			}
 		);				
@@ -75,5 +76,19 @@ app.controller('sellerController' ,function($scope,$controller   ,sellerService)
 			}			
 		);
 	}
+	$scope.shenhe = 0;
+	
+	//審核
+	$scope.updateStatus=function(status){
+		sellerService.updateStatus($scope.shenhe,status).success(function(response){
+				alert(response.message)
+				$scope.reloadList();//刷新列表
+		})
+	}
+	
+	
+	
+	
+	
     
 });	

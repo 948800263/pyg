@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+				
+		
+		<!-- 拦截处理的方式   Spring框架默认使用的是spel表达式-->
+		<http pattern="/login.html" security="none"/>
+		<http pattern="/css/**" security="none"></http>
+		<http pattern="/img/**" security="none"></http>
+		<http pattern="/js/**" security="none"></http>
+		<http pattern="/plugins/**" security="none"></http>
+		
+		<http use-expressions="false">
+			<!-- 设置拦截的路径 -->
+			<intercept-url pattern="/**"	access="ROLE_ADMIN"/>
+			<!-- 设置登陆 -->
+			<form-login login-page="/login.html" 
+			always-use-default-target="true"
+			default-target-url="/admin/index.html" authentication-failure-url="/login.html"/>
+			<!-- 设置CSRF token -->
+			<csrf disabled="true"/>
+			
+			<headers>
+				<frame-options policy="SAMEORIGIN"/>
+			</headers>
+			
+			<logout/>
+		</http>
+		
+		
+		
+		<!-- 认证行为 -->
+		<authentication-manager>
+			<authentication-provider>
+				<user-service>
+					<!-- 设置用户登陆账号密码 -->
+					<user name="admin" password="123456" authorities="ROLE_ADMIN"/>
+					<user name="tom" password="123456" authorities="ROLE_ADMIN"/>
+				</user-service>
+			</authentication-provider>
+		</authentication-manager>
+						
+</beans:beans>

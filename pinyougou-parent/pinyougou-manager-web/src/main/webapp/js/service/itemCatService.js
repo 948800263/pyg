@@ -1,6 +1,10 @@
 //服务层
 app.service('itemCatService',function($http){
-	    	
+	    
+	//读取下级列表数据绑定到表单中
+	this.findByParentId=function(parentId){
+		return $http.post('../itemCat/findByParentId.do?parentId='+parentId);		
+	}
 	//读取列表数据绑定到表单中
 	this.findAll=function(){
 		return $http.get('../itemCat/findAll.do');		

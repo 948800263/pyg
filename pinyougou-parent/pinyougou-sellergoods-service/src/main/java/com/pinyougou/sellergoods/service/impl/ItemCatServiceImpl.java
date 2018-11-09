@@ -24,6 +24,17 @@ public class ItemCatServiceImpl implements ItemCatService {
 	private TbItemCatMapper itemCatMapper;
 	
 	/**
+	 * 根据父分类id查询本类别列表
+	 * */
+	@Override
+	public List<TbItemCat> findByParentId(Long id) {
+		TbItemCatExample itemCatExample = new TbItemCatExample();
+		itemCatExample.createCriteria().andParentIdEqualTo(id);
+		return itemCatMapper.selectByExample(itemCatExample);
+	}
+	
+	
+	/**
 	 * 查询全部
 	 */
 	@Override
@@ -81,16 +92,19 @@ public class ItemCatServiceImpl implements ItemCatService {
 	
 		@Override
 	public PageResult findPage(TbItemCat itemCat, int pageNum, int pageSize) {
+		
 		PageHelper.startPage(pageNum, pageSize);
 		
 		TbItemCatExample example=new TbItemCatExample();
 		Criteria criteria = example.createCriteria();
 		
 		if(itemCat!=null){			
-						if(itemCat.getName()!=null && itemCat.getName().length()>0){
+			if(itemCat.getName()!=null && itemCat.getName().length()>0){
 				criteria.andNameLike("%"+itemCat.getName()+"%");
 			}
-	
+			if(itemCat.getParentId()!=null){
+				criteria.andParentIdEqualTo(itemCat.getParentId());
+			}
 		}
 		
 		Page<TbItemCat> page= (Page<TbItemCat>)itemCatMapper.selectByExample(example);		

@@ -1,6 +1,7 @@
 package com.pinyougou.sellergoods.service;
 import java.util.List;
 import com.pinyougou.pojo.TbGoods;
+import com.pinyougou.pojogroup.Goods;
 
 import entity.PageResult;
 /**
@@ -57,5 +58,8 @@ public interface GoodsService {
 	 * @return
 	 */
 	public PageResult findPage(TbGoods goods, int pageNum,int pageSize);
+
+
+	public void add(Goods goods);
 	
 }

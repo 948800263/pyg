@@ -3,6 +3,16 @@ app.controller('itemCatController' ,function($scope,$controller   ,itemCatServic
 	
 	$controller('baseController',{$scope:$scope});//继承
 	
+	 //读取下级列表数据绑定到表单中  
+	$scope.findByParentId=function(parentId){
+		itemCatService.findByParentId(parentId).success(
+			function(response){
+				$scope.list=response;
+			}			
+		);
+	}    
+	
+	
     //读取列表数据绑定到表单中  
 	$scope.findAll=function(){
 		itemCatService.findAll().success(
@@ -64,16 +74,39 @@ app.controller('itemCatController' ,function($scope,$controller   ,itemCatServic
 		);				
 	}
 	
-	$scope.searchEntity={};//定义搜索对象 
+	$scope.searchEntity={
+			parentId:0		
+	};//定义搜索对象 
 	
 	//搜索
-	$scope.search=function(page,rows){			
-		itemCatService.search(page,rows,$scope.searchEntity).success(
-			function(response){
-				$scope.list=response.rows;	
-				$scope.paginationConf.totalItems=response.total;//更新总记录数
-			}			
-		);
+	$scope.search=function(page,rows){
+		itemCatService.search(page,rows,$scope.searchEntity).success(function(response){
+			$scope.list=response.rows;	
+			$scope.paginationConf.totalItems=response.total;//更新总记录数
+		})
 	}
+	
+	//设置级别
+	$scope.grade=1;//默认为1级	
+	
+	$scope.setGrade=function(g){
+		$scope.grade = g;
+	}
+	
+	$scope.selectNext=function(entity){
+		if($scope.grade==1){
+			$scope.entity_1=null
+			$scope.entity_2=null
+		}else if($scope.grade==2){
+			$scope.entity_1=entity
+			$scope.entity_2=null
+		}else if($scope.grade==3){
+			$scope.entity_2=entity
+		}
+		$scope.searchEntity.parentId=entity.id
+		$scope.search(1,10)
+	}
+	
+	
     
 });	

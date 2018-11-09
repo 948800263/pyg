@@ -32,7 +32,11 @@
                     </div>
 
                     <div class="box-body">
-
+													<ol class="breadcrumb">	                        	
+							  <li><a href="#" ng-click="grade=1;selectNext({id:0})">顶级分类列表</a></li>
+							  <li><a href="#" ng-click="grade=2;selectNext(entity_1)">{{entity_1.name}}</a></li>
+							  <li><a href="#" ng-click="grade=3;selectNext(entity_2)">{{entity_2.name}}</a></li>
+							</ol>
                         <!-- 数据表格 -->
                         <div class="table-box">
 
@@ -47,7 +51,8 @@
                                 </div>
                             </div>
                             <div class="box-tools pull-right">
-                                <div class="has-feedback">							       
+                                <div class="has-feedback">			
+                                				       
                                 </div>
                             </div>
                             <!--工具栏/-->
@@ -75,7 +80,8 @@
                              <td>{{entity.name}}</td>			
                              <td>{{entity.typeId}}</td>			
 		                                 
-		                                  <td class="text-center">                                           
+		                                  <td class="text-center">                    
+		                                  	<span ng-if="grade!=3"><button type="button" class="btn bg-olive btn-xs" ng-click="setGrade(grade+1);selectNext(entity)">查询下级</button> 	</span>                       
 		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" ng-click="findOne(entity.id)" >修改</button>                                           
 		                                  </td>
 			                          </tr>									 

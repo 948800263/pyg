@@ -8,7 +8,7 @@
 						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 				
 	<dubbo:application name="pinyougou-shop-web" />
-	<dubbo:registry address="zookeeper://192.168.25.128:2181"/>
+	<dubbo:registry address="zookeeper://192.168.25.131:2181"/>
 	<dubbo:reference id="sellerService"  interface="com.pinyougou.sellergoods.service.SellerService" >
 	</dubbo:reference>	
 		<!-- 拦截处理的方式   Spring框架默认使用的是spel表达式-->

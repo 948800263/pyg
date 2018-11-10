@@ -1,8 +1,10 @@
 //服务层
 app.service('typeTemplateService',function($http){
 	
-	
-	
+
+	this.findSpecList=function(id){
+		return $http.post('../typeTemplate/findSpecList.do?id='+id)
+	}
 	//发送请求
 	this.selectOptionList=function(){
 		return $http.get('../brand/selectOptionList.do');

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
@@ -21,6 +23,7 @@ import com.pinyougou.pojo.TbGoodsExample;
 import com.pinyougou.pojo.TbGoodsExample.Criteria;
 import com.pinyougou.pojo.TbItem;
 import com.pinyougou.pojo.TbItemCat;
+import com.pinyougou.pojo.TbItemExample;
 import com.pinyougou.pojo.TbSeller;
 import com.pinyougou.pojogroup.Goods;
 import com.pinyougou.sellergoods.service.GoodsService;
@@ -33,10 +36,38 @@ import entity.PageResult;
  *
  */
 @Service
+@Transactional
 public class GoodsServiceImpl implements GoodsService {
 
 	@Autowired
 	private TbGoodsMapper goodsMapper;
+	
+	/**
+	 * 审核和驳回
+	 * 
+	 * */
+	@Override
+	public void updateStatus(Long[] ids,String status){
+		for (Long id : ids) {
+			TbGoods goods = goodsMapper.selectByPrimaryKey(id);
+			goods.setAuditStatus(status);
+			goodsMapper.updateByPrimaryKey(goods);
+		}
+	}
+	/**
+	 * 批量删除
+	 */
+	@Override
+	public void delete(Long[] ids) {
+		for (Long id : ids) {	
+			TbGoods goods = goodsMapper.selectByPrimaryKey(id);
+			goods.setIsDelete("1");//1是删除了  0是没删除
+			goodsMapper.updateByPrimaryKey(goods);
+		}	
+	}
+	
+	
+	
 	
 	/**
 	 * 查询全部
@@ -52,7 +83,9 @@ public class GoodsServiceImpl implements GoodsService {
 	@Override
 	public PageResult findPage(int pageNum, int pageSize) {
 		PageHelper.startPage(pageNum, pageSize);		
-		Page<TbGoods> page=   (Page<TbGoods>) goodsMapper.selectByExample(null);
+		TbGoodsExample exam = new TbGoodsExample();
+		exam.createCriteria().andIsDeleteIsNull();
+		Page<TbGoods> page=   (Page<TbGoods>) goodsMapper.selectByExample(exam);
 		return new PageResult(page.getTotal(), page.getResult());
 	}
 
@@ -79,11 +112,14 @@ public class GoodsServiceImpl implements GoodsService {
 		 goods.getGoods().setAuditStatus("0");//设置初始化状态为 未申请状态
 		
 		 goodsMapper.insert(goods.getGoods());//添加商品
-		 
 		 TbGoodsDesc desc = goods.getGoodsDesc();//添加商品详情
 		 desc.setGoodsId(goods.getGoods().getId());//设置商品详情和商品的关联
 		 descMapper.insert(desc);
 		 
+		 saveSKU(goods);//SKU添加
+	}
+	
+	public void saveSKU(Goods goods){
 		 for(TbItem item :goods.getItemList()){
 				//标题
 				String title= goods.getGoods().getGoodsName();   
@@ -115,14 +151,29 @@ public class GoodsServiceImpl implements GoodsService {
 					item.setImage ( (String)imageList.get(0).get("url"));
 				}		
 				itemMapper.insert(item);
-			}		
+			}
 	}
 	
 	/**
 	 * 修改
 	 */
 	@Override
+	public void update(Goods goods){
+		//改商品信息
+		goodsMapper.updateByPrimaryKey(goods.getGoods());
+		//改商品详情
+		descMapper.updateByPrimaryKey(goods.getGoodsDesc());
+		//改SKU
+			//1、删除
+			TbItemExample example = new TbItemExample();
+			example.createCriteria().andGoodsIdEqualTo(new Long(goods.getGoods().getId()));
+			itemMapper.deleteByExample(example);
+			//2、添加
+			saveSKU(goods);
+	}	
+	@Override
 	public void update(TbGoods goods){
+		//改商品信息
 		goodsMapper.updateByPrimaryKey(goods);
 	}	
 	
@@ -132,19 +183,24 @@ public class GoodsServiceImpl implements GoodsService {
 	 * @return
 	 */
 	@Override
-	public TbGoods findOne(Long id){
-		return goodsMapper.selectByPrimaryKey(id);
+	public Goods findOne(Long id){
+		Goods goods = new Goods();
+		//把商品对象放进去
+		goods.setGoods(goodsMapper.selectByPrimaryKey(id));
+		//获取商品详情
+		goods.setGoodsDesc(descMapper.selectByPrimaryKey(id));
+		
+		//获取SKU的信息
+		TbItemExample example = new TbItemExample();
+		example.createCriteria().andGoodsIdEqualTo(id);
+		List<TbItem> list = itemMapper.selectByExample(example);
+		goods.setItemList(list);
+		
+		
+		return goods;
 	}
 
-	/**
-	 * 批量删除
-	 */
-	@Override
-	public void delete(Long[] ids) {
-		for(Long id:ids){
-			goodsMapper.deleteByPrimaryKey(id);
-		}		
-	}
+	
 	
 	
 		@Override
@@ -153,10 +209,10 @@ public class GoodsServiceImpl implements GoodsService {
 		
 		TbGoodsExample example=new TbGoodsExample();
 		Criteria criteria = example.createCriteria();
-		
+		criteria.andIsDeleteIsNull();//查询未删除的数据
 		if(goods!=null){			
-						if(goods.getSellerId()!=null && goods.getSellerId().length()>0){
-				criteria.andSellerIdLike("%"+goods.getSellerId()+"%");
+			if(goods.getSellerId()!=null && goods.getSellerId().length()>0){
+				criteria.andSellerIdEqualTo(goods.getSellerId());
 			}
 			if(goods.getGoodsName()!=null && goods.getGoodsName().length()>0){
 				criteria.andGoodsNameLike("%"+goods.getGoodsName()+"%");
@@ -176,9 +232,7 @@ public class GoodsServiceImpl implements GoodsService {
 			if(goods.getIsEnableSpec()!=null && goods.getIsEnableSpec().length()>0){
 				criteria.andIsEnableSpecLike("%"+goods.getIsEnableSpec()+"%");
 			}
-			if(goods.getIsDelete()!=null && goods.getIsDelete().length()>0){
-				criteria.andIsDeleteLike("%"+goods.getIsDelete()+"%");
-			}
+			
 	
 		}
 		

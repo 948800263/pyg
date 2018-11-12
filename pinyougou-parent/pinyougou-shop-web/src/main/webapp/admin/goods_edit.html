@@ -36,11 +36,11 @@
     
 </head>
 
-<body class="hold-transition skin-red sidebar-mini" ng-init="selectItemCatList()" ng-controller="goodsController" ng-app="pinyougou">
+<body class="hold-transition skin-red sidebar-mini" ng-init="selectItemCatList();findOne()" ng-controller="goodsController" ng-app="pinyougou">
 
             <!-- 正文区域 -->
             <section class="content">
-
+				
                 <div class="box-body">
 
                     <!--tab页-->
@@ -197,7 +197,7 @@
 										  <div class="col-md-2 title">{{pojo.text}} </div>
 										  <div class="col-md-10 data">         
 										      <span ng-repeat="option in pojo.options">
-										      	<input  type="checkbox" ng-click="isChecked($event,pojo.text,option.optionName)">{{option.optionName}}	     
+										      	<input  type="checkbox" ng-click="isChecked($event,pojo.text,option.optionName)" ng-checked="checkAttributeValue(pojo.text,option.optionName)">{{option.optionName}}	     
 										      </span>  
 										  </div>
 										</div>   
@@ -253,7 +253,7 @@
                    </div>
                   <div class="btn-toolbar list-toolbar">
 				      <button class="btn btn-primary" ng-click="add()"><i class="fa fa-save"></i>保存</button>
-				      <button class="btn btn-default" >返回列表</button>
+				      <a href="goods.html" class="btn btn-default">返回列表</a>
 				  </div>
 			
             </section>

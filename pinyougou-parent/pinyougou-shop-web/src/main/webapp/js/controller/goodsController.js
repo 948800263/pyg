@@ -1,7 +1,66 @@
  //控制层 
-app.controller('goodsController' ,function($scope,$controller,typeTemplateService,itemCatService,goodsService,uploadService){	
+app.controller('goodsController' ,function($scope,$controller,$location,typeTemplateService,itemCatService,goodsService,uploadService){	
 	
 	$controller('baseController',{$scope:$scope});//继承
+	
+	//判断一个选项是否应该被选中
+	$scope.checkAttributeValue=function(key,value){
+	
+		var obj = $scope.searchListByAttribute($scope.entity.goodsDesc.specificationItems,"attributeName",key);
+		if(obj!=null){
+			if(obj.attributeValue.indexOf(value)>=0){
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+		
+	}
+	
+	
+	//查询实体 
+	$scope.findOne=function(id){		
+		var id = $location.search()["id"]; //看上去是发送请求  其实并没有  只是获取发送过来的参数
+	
+		if(id==null){
+			return ;
+		}
+		goodsService.findOne(id).success(
+			function(response){
+				$scope.entity= response;	
+				//设置富文本编辑器的内容
+				editor.html($scope.entity.goodsDesc.introduction);
+				 //显示图片列表
+				$scope.entity.goodsDesc.itemImages=  JSON.parse($scope.entity.goodsDesc.itemImages);
+				//显示扩展属性
+				$scope.entity.goodsDesc.customAttributeItems=  JSON.parse($scope.entity.goodsDesc.customAttributeItems);	
+				//规格
+				$scope.entity.goodsDesc.specificationItems=JSON.parse($scope.entity.goodsDesc.specificationItems);
+				//SKU列表规格列转换				
+				for( var i=0;i<$scope.entity.itemList.length;i++ ){
+						$scope.entity.itemList[i].spec = JSON.parse( $scope.entity.itemList[i].spec);		
+				}
+			}
+		);				
+	}
+	
+	
+	$scope.itemCatList=[];//商品分类列表  存储所有的分类类别
+	
+	$scope.findItemCatList=function(){		
+		itemCatService.findAll().success(function(response){
+			for(var i =0;i<response.length;i++){
+				$scope.itemCatList[response[i].id]=response[i].name;
+			}
+		})
+	}
+	
+	
+	
+	$scope.status=['未审核','已审核','审核未通过','关闭'];//商品状态
+	
 	$scope.entity={
 			itemList:[],
 			goodsDesc:{
@@ -99,7 +158,9 @@ app.controller('goodsController' ,function($scope,$controller,typeTemplateServic
     		function(response){
     			 $scope.typeTemplate=response;  //模板对象赋值	  
     			 $scope.typeTemplate.brandIds=JSON.parse(response.brandIds);//列表是对象 不能是字符串
-    			 $scope.entity.goodsDesc.customAttributeItems= JSON.parse(response.customAttributeItems)//是扩展属性列表
+    			 if($location.search()['id']==null){
+    				 $scope.entity.goodsDesc.customAttributeItems= JSON.parse(response.customAttributeItems)//是扩展属性列表
+    			 }
     			 $scope.specList= JSON.parse(response.specIds)//是扩展属性列表
     		}
     	);    	
@@ -136,11 +197,18 @@ app.controller('goodsController' ,function($scope,$controller,typeTemplateServic
 	//用来做添加功能的
 	$scope.add=function(){
 		$scope.entity.goodsDesc.introduction = editor.html(); //把富文本编辑器的内容放到对象中
-		goodsService.add($scope.entity).success(function(response){
+		var serviceObject = null;
+		if($scope.entity.goods.id!=null){//如果有ID
+			serviceObject=goodsService.update( $scope.entity ); //修改  
+		}else{
+			serviceObject=goodsService.add( $scope.entity  );//增加 
+		}				
+		serviceObject.success(function(response){
 			if(response.success){
-				alert('保存成功');					
+				alert('操作成功');					
 				$scope.entity={};
 				editor.html('');//清空富文本编辑器
+				location.href="goods.html";//跳转到商品列表页
 			}else{
 				alert(response.message);
 			}
@@ -168,14 +236,7 @@ app.controller('goodsController' ,function($scope,$controller,typeTemplateServic
 		);
 	}
 	
-	//查询实体 
-	$scope.findOne=function(id){				
-		goodsService.findOne(id).success(
-			function(response){
-				$scope.entity= response;					
-			}
-		);				
-	}
+	
 	
 	//保存 
 	$scope.save=function(){				

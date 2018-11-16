@@ -284,5 +284,12 @@
 		<module>pinyougou-sellergoods-interface</module>
 		<module>pinyougou-manager-web</module>
 		<module>pinyougou-shop-web</module>
+		<module>pinyougou-content-interface</module>
+		<module>pinyougou-content-service</module>
+		<module>pinyougou-portal-web</module>
+		<module>pinyougou-solr-util</module>
+		<module>pinyougou-search-interface</module>
+		<module>pinyougou-search-service</module>
+		<module>pinyougou-serach-web</module>
 	</modules>
 </project>

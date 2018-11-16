@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.pinyougou.mapper.TbBrandMapper;
 import com.pinyougou.mapper.TbSpecificationOptionMapper;
 import com.pinyougou.mapper.TbTypeTemplateMapper;
 import com.pinyougou.pojo.TbSpecificationOption;
@@ -33,6 +36,27 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
 	
 	@Autowired
 	private TbSpecificationOptionMapper optionMapper;
+	
+	@Autowired
+	private RedisTemplate redisTemplate;
+
+	
+	
+	public void saveToRedis(){
+		
+		List<TbTypeTemplate> list = findAll();
+		
+		for (TbTypeTemplate tbTypeTemplate : list) {
+			//获取品牌列表
+			List<Map> brandList = (List<Map>) JSON.parseArray(tbTypeTemplate.getBrandIds(),Map.class);
+			redisTemplate.boundHashOps("brandList").put(tbTypeTemplate.getId(), brandList);
+			//获取规格列表
+			List<Map> specList = selectSpecList(tbTypeTemplate.getId());
+			redisTemplate.boundHashOps("specList").put(tbTypeTemplate.getId(), specList);
+		}
+		
+	}
+	
 	
 	//id是模板的id  但是查询的是   specOption详情的内容
 	@Override
@@ -130,8 +154,9 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
 			}
 	
 		}
-		
-		Page<TbTypeTemplate> page= (Page<TbTypeTemplate>)typeTemplateMapper.selectByExample(example);		
+	
+		Page<TbTypeTemplate> page= (Page<TbTypeTemplate>)typeTemplateMapper.selectByExample(example);	
+		saveToRedis();
 		return new PageResult(page.getTotal(), page.getResult());
 	}
 	

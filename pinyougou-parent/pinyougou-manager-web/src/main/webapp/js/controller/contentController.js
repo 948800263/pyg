@@ -1,7 +1,30 @@
  //控制层 
-app.controller('contentController' ,function($scope,$controller   ,contentService){	
+app.controller('contentController' ,function($scope,$controller,contentCategoryService,uploadService,contentService){	
 	
 	$controller('baseController',{$scope:$scope});//继承
+	
+	$scope.status=["无效","有效"];
+	
+	//加载广告分类列表
+	$scope.findContentCategoryList=function(){
+		contentCategoryService.findAll().success(
+			function(response){
+				$scope.contentCategoryList=response;				
+			}
+		);
+	}
+	
+	
+	//文件上传功能
+	$scope.uploadFile=function(){
+		uploadService.uploadFile().success(function(response){
+			if(response.success){//如果上传成功，取出url
+        		$scope.entity.pic=response.message;//设置文件地址
+        	}else{
+        		alert(response.message);
+        	}
+		})
+	}
 	
     //读取列表数据绑定到表单中  
 	$scope.findAll=function(){

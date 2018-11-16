@@ -1,5 +1,10 @@
 //服务层
 app.service('goodsService',function($http){
+	
+	//修改 审核状态
+	this.updateStatus=function(ids,status){
+		return $http.post('../goods/updateStatus.do?status='+status+"&ids="+ids);		
+	}
 	    	
 	//读取列表数据绑定到表单中
 	this.findAll=function(){

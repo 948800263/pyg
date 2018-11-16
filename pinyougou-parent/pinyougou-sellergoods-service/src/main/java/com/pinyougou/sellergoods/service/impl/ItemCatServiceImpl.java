@@ -1,6 +1,8 @@
 package com.pinyougou.sellergoods.service.impl;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -23,6 +25,18 @@ public class ItemCatServiceImpl implements ItemCatService {
 	@Autowired
 	private TbItemCatMapper itemCatMapper;
 	
+	@Autowired
+	private RedisTemplate redisTemplate;
+	
+	
+	public void saveToRedis(){
+		//缓存的内容?
+		List<TbItemCat> list = findAll();
+		for (TbItemCat tbItemCat : list) {
+			redisTemplate.boundHashOps("itemCat").put(tbItemCat.getName(), tbItemCat.getTypeId());
+		}
+	}
+	
 	/**
 	 * 根据父分类id查询本类别列表
 	 * */
@@ -30,6 +44,7 @@ public class ItemCatServiceImpl implements ItemCatService {
 	public List<TbItemCat> findByParentId(Long id) {
 		TbItemCatExample itemCatExample = new TbItemCatExample();
 		itemCatExample.createCriteria().andParentIdEqualTo(id);
+		saveToRedis();
 		return itemCatMapper.selectByExample(itemCatExample);
 	}
 	
@@ -107,7 +122,8 @@ public class ItemCatServiceImpl implements ItemCatService {
 			}
 		}
 		
-		Page<TbItemCat> page= (Page<TbItemCat>)itemCatMapper.selectByExample(example);		
+		Page<TbItemCat> page= (Page<TbItemCat>)itemCatMapper.selectByExample(example);	
+		saveToRedis();
 		return new PageResult(page.getTotal(), page.getResult());
 	}
 	

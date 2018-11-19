@@ -31,26 +31,16 @@ public class SolrUtil {
 		example.createCriteria().andStatusEqualTo("1");
 		//查询数据
 		List<TbItem> list = itemMapper.selectByExample(example);
-		List<com.solr.pojo.TbItem> list1=new ArrayList();
-		for (TbItem tbItem : list) {
-			com.solr.pojo.TbItem  item = new com.solr.pojo.TbItem();
-			Map map = (Map) JSON.parse(tbItem.getSpec());
-			item.setId(tbItem.getId());
-			item.setBrand(tbItem.getBrand());
-			item.setCategory(tbItem.getCategory());
 		
-			item.setSeller(tbItem.getSeller());
-			item.setTitle(tbItem.getTitle());
-			item.setPrice(tbItem.getPrice());	
-			list1.add(item);
+		for (TbItem tbItem : list) {
+			Map map = (Map) JSON.parse(tbItem.getSpec());
 			tbItem.setSpecMap(map);
 		}
-		System.out.println("1111");
+	
 		
 		//保存到solr里面
-		solrTemplate.saveBeans(list1);
+		solrTemplate.saveBeans(list);
 		solrTemplate.commit();
-		System.out.println("222");
 	}
 //	public static void main(String[] args) {
 //		System.out.println("--读取配置文件");

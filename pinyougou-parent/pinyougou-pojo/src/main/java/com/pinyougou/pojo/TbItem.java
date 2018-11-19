@@ -63,13 +63,13 @@ public class TbItem implements Serializable{
     private String spec;
     @Dynamic
     @Field("item_spec_*")
-    private Map specMap;
+    private Map<String,String> specMap;
 
-    public Map getSpecMap() {
+    public Map<String,String> getSpecMap() {
 		return specMap;
 	}
 
-	public void setSpecMap(Map specMap) {
+	public void setSpecMap(Map<String,String> specMap) {
 		this.specMap = specMap;
 	}
 

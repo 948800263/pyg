@@ -27,9 +27,9 @@ import org.springframework.data.solr.core.query.result.HighlightPage;
 import org.springframework.data.solr.core.query.result.ScoredPage;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.pinyougou.pojo.TbItem;
 import com.pinyougou.search.service.ItemSearchService;
 import com.pinyougou.util.SolrUtil;
-import com.solr.pojo.TbItem;
 @Service(timeout=3000)
 public class ItemSearchServiceImpl implements ItemSearchService{
 

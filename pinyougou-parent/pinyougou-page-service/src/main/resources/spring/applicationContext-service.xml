@@ -10,6 +10,7 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:component-scan base-package="com.pinyougou.page.service.impl"/>
 	<!-- 事务  -->
 	<!-- 事务管理器  -->  
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
@@ -18,14 +19,5 @@
       
     <!-- 开启事务控制的注解支持 -->  
     <tx:annotation-driven transaction-manager="transactionManager"/>
-	<!--  dubbox的配置 -->
-     	<dubbo:protocol name="dubbo" port="20885"></dubbo:protocol>
-		<dubbo:application name="pinyougou-page-service"/>  
-	    <dubbo:registry address="zookeeper://192.168.25.128:2181"/>
-		<dubbo:annotation package="com.pinyougou.page.service.impl" />  
-		
-	<bean id="freemarkerConfig"	class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-		<property name="templateLoaderPath" value="/WEB-INF/ftl/" />
-		<property name="defaultEncoding" value="UTF-8" />
-	</bean>
+	
 </beans>

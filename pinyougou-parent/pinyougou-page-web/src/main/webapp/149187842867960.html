@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-	<title>²úÆ·ÏêÇéÒ³</title>
+	<title>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ò³</title>
 	 <link rel="icon" href="assets/img/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="css/webbase.css" />
@@ -16,25 +16,25 @@
 	<script type="text/javascript" src="js/base.js">  </script>
 	<script type="text/javascript" src="js/controller/itemController.js">  </script> 
 	<script>
-       //SKUÉÌÆ·ÁÐ±í
+       //SKUï¿½ï¿½Æ·ï¿½Ð±ï¿½
 	   var skuList=[    	    
 	    	    		    		{
 		    		"id":1369280,
-		    		"title":"¾«Æ·°ëÉíÈ¹£¨Çï¿î´òÕÛ£© ÒÆ¶¯3G 16G",
+		    		"title":"ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û£ï¿½ ï¿½Æ¶ï¿½3G 16G",
 		    		"price":0.01,		    		
-		    		"spec": {"ÍøÂç":"ÒÆ¶¯3G","»úÉíÄÚ´æ":"16G"}	
+		    		"spec": {"ï¿½ï¿½ï¿½ï¿½":"ï¿½Æ¶ï¿½3G","ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½":"16G"}	
 		    		} ,     		
 		    		{
 		    		"id":1369281,
-		    		"title":"¾«Æ·°ëÉíÈ¹£¨Çï¿î´òÕÛ£© ÒÆ¶¯3G 32G",
+		    		"title":"ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û£ï¿½ ï¿½Æ¶ï¿½3G 32G",
 		    		"price":0.02,		    		
-		    		"spec": {"ÍøÂç":"ÒÆ¶¯3G","»úÉíÄÚ´æ":"32G"}	
+		    		"spec": {"ï¿½ï¿½ï¿½ï¿½":"ï¿½Æ¶ï¿½3G","ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½":"32G"}	
 		    		} ,     		
 		    		{
 		    		"id":1369282,
-		    		"title":"¾«Æ·°ëÉíÈ¹£¨Çï¿î´òÕÛ£© ÒÆ¶¯4G 16G",
+		    		"title":"ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û£ï¿½ ï¿½Æ¶ï¿½4G 16G",
 		    		"price":0.03,		    		
-		    		"spec": {"ÍøÂç":"ÒÆ¶¯4G","»úÉíÄÚ´æ":"16G"}	
+		    		"spec": {"ï¿½ï¿½ï¿½ï¿½":"ï¿½Æ¶ï¿½4G","ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½":"16G"}	
 		    		} ,     		
 	   ];  
     </script>
@@ -42,50 +42,50 @@
 
 <body ng-app="pinyougou" ng-controller="itemController" ng-init="num=1;loadSku()">
 
-<!--Ò³Ãæ¶¥²¿ ¿ªÊ¼-->
+<!--Ò³ï¿½æ¶¥ï¿½ï¿½ ï¿½ï¿½Ê¼-->
 <div id="nav-bottom">
-	<!--¶¥²¿-->
+	<!--ï¿½ï¿½ï¿½ï¿½-->
 	<div class="nav-top">
 		<div class="top">
 			<div class="py-container">
 				<div class="shortcut">
 					<ul class="fl">
-						<li class="f-item">Æ·ÓÅ¹º»¶Ó­Äú£¡</li>
-						<li class="f-item">Çë<a href="login.html" target="_blank">µÇÂ¼</a>¡¡<span><a href="register.html" target="_blank">Ãâ·Ñ×¢²á</a></span></li>
+						<li class="f-item">Æ·ï¿½Å¹ï¿½ï¿½ï¿½Ó­ï¿½ï¿½ï¿½ï¿½</li>
+						<li class="f-item">ï¿½ï¿½<a href="login.html" target="_blank">ï¿½ï¿½Â¼</a>ï¿½ï¿½<span><a href="register.html" target="_blank">ï¿½ï¿½ï¿½×¢ï¿½ï¿½</a></span></li>
 					</ul>
 					<ul class="fr">
-						<li class="f-item">ÎÒµÄ¶©µ¥</li>
+						<li class="f-item">ï¿½ÒµÄ¶ï¿½ï¿½ï¿½</li>
 						<li class="f-item space"></li>
-						<li class="f-item"><a href="home.html" target="_blank">ÎÒµÄÆ·ÓÅ¹º</a></li>
+						<li class="f-item"><a href="home.html" target="_blank">ï¿½Òµï¿½Æ·ï¿½Å¹ï¿½</a></li>
 						<li class="f-item space"></li>
-						<li class="f-item">Æ·ÓÅ¹º»áÔ±</li>
+						<li class="f-item">Æ·ï¿½Å¹ï¿½ï¿½ï¿½Ô±</li>
 						<li class="f-item space"></li>
-						<li class="f-item">ÆóÒµ²É¹º</li>
+						<li class="f-item">ï¿½ï¿½Òµï¿½É¹ï¿½</li>
 						<li class="f-item space"></li>
-						<li class="f-item">¹Ø×¢Æ·ÓÅ¹º</li>
+						<li class="f-item">ï¿½ï¿½×¢Æ·ï¿½Å¹ï¿½</li>
 						<li class="f-item space"></li>
 						<li class="f-item" id="service">
-							<span>¿Í»§·þÎñ</span>
+							<span>ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½</span>
 							<ul class="service">
-								<li><a href="cooperation.html" target="_blank">ºÏ×÷ÕÐÉÌ</a></li>
-								<li><a href="shoplogin.html" target="_blank">ÉÌ¼ÒºóÌ¨</a></li>
-								<li><a href="cooperation.html" target="_blank">ºÏ×÷ÕÐÉÌ</a></li>
-								<li><a href="#">ÉÌ¼ÒºóÌ¨</a></li>
+								<li><a href="cooperation.html" target="_blank">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+								<li><a href="shoplogin.html" target="_blank">ï¿½Ì¼Òºï¿½Ì¨</a></li>
+								<li><a href="cooperation.html" target="_blank">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+								<li><a href="#">ï¿½Ì¼Òºï¿½Ì¨</a></li>
 							</ul>
 						</li>
 						<li class="f-item space"></li>
-						<li class="f-item">ÍøÕ¾µ¼º½</li>
+						<li class="f-item">ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 
-		<!--Í·²¿-->
+		<!--Í·ï¿½ï¿½-->
 		<div class="header">
 			<div class="py-container">
 				<div class="yui3-g Logo">
 					<div class="yui3-u Left logoArea">
-						<a class="logo-bd" title="Æ·ÓÅ¹º" href="JD-index.html" target="_blank"></a>
+						<a class="logo-bd" title="Æ·ï¿½Å¹ï¿½" href="JD-index.html" target="_blank"></a>
 					</div>
 					<div class="yui3-u Center searchArea">
 						<div class="search">
@@ -93,19 +93,19 @@
 								<!--searchAutoComplete-->
 								<div class="input-append">
 									<input type="text" id="autocomplete" type="text" class="input-error input-xxlarge" />
-									<button class="sui-btn btn-xlarge btn-danger" type="button">ËÑË÷</button>
+									<button class="sui-btn btn-xlarge btn-danger" type="button">ï¿½ï¿½ï¿½ï¿½</button>
 								</div>
 							</form>
 						</div>
 						<div class="hotwords">
 							<ul>
-								<li class="f-item">Æ·ÓÅ¹ºÊ×·¢</li>
-								<li class="f-item">ÒÚÔªÓÅ»Ý</li>
-								<li class="f-item">9.9ÔªÍÅ¹º</li>
-								<li class="f-item">Ã¿Âú99¼õ30</li>
-								<li class="f-item">ÒÚÔªÓÅ»Ý</li>
-								<li class="f-item">9.9ÔªÍÅ¹º</li>
-								<li class="f-item">°ì¹«ÓÃÆ·</li>
+								<li class="f-item">Æ·ï¿½Å¹ï¿½ï¿½×·ï¿½</li>
+								<li class="f-item">ï¿½ï¿½Ôªï¿½Å»ï¿½</li>
+								<li class="f-item">9.9Ôªï¿½Å¹ï¿½</li>
+								<li class="f-item">Ã¿ï¿½ï¿½99ï¿½ï¿½30</li>
+								<li class="f-item">ï¿½ï¿½Ôªï¿½Å»ï¿½</li>
+								<li class="f-item">9.9Ôªï¿½Å¹ï¿½</li>
+								<li class="f-item">ï¿½ì¹«ï¿½ï¿½Æ·</li>
 
 							</ul>
 						</div>
@@ -115,12 +115,12 @@
 							<div class="show-shopcar" id="shopcar">
 								<span class="car"></span>
 								<a class="sui-btn btn-default btn-xlarge" href="cart.html" target="_blank">
-									<span>ÎÒµÄ¹ºÎï³µ</span>
+									<span>ï¿½ÒµÄ¹ï¿½ï¿½ï³µ</span>
 									<i class="shopnum">0</i>
 								</a>
 								<div class="clearfix shopcarlist" id="shopcarlist" style="display:none">
-									<p>"°¡Å¶£¬ÄãµÄ¹ºÎï³µ»¹Ã»ÓÐÉÌÆ·Å¶£¡"</p>
-									<p>"°¡Å¶£¬ÄãµÄ¹ºÎï³µ»¹Ã»ÓÐÉÌÆ·Å¶£¡"</p>
+									<p>"ï¿½ï¿½Å¶ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï³µï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Æ·Å¶ï¿½ï¿½"</p>
+									<p>"ï¿½ï¿½Å¶ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï³µï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Æ·Å¶ï¿½ï¿½"</p>
 								</div>
 							</div>
 						</div>
@@ -129,18 +129,18 @@
 
 				<div class="yui3-g NavList">
 					<div class="yui3-u Left all-sort">
-						<h4>È«²¿ÉÌÆ··ÖÀà</h4>
+						<h4>È«ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</h4>
 					</div>
 					<div class="yui3-u Center navArea">
 						<ul class="nav">
-							<li class="f-item">·þ×°³Ç</li>
-							<li class="f-item">ÃÀ×±¹Ý</li>
-							<li class="f-item">Æ·ÓÅ³¬ÊÐ</li>
-							<li class="f-item">È«Çò¹º</li>
-							<li class="f-item">ÉÁ¹º</li>
-							<li class="f-item">ÍÅ¹º</li>
-							<li class="f-item">ÓÐÈ¤</li>
-							<li class="f-item"><a href="seckill-index.html" target="_blank">ÃëÉ±</a></li>
+							<li class="f-item">ï¿½ï¿½×°ï¿½ï¿½</li>
+							<li class="f-item">ï¿½ï¿½×±ï¿½ï¿½</li>
+							<li class="f-item">Æ·ï¿½Å³ï¿½ï¿½ï¿½</li>
+							<li class="f-item">È«ï¿½ï¿½</li>
+							<li class="f-item">ï¿½ï¿½ï¿½ï¿½</li>
+							<li class="f-item">ï¿½Å¹ï¿½</li>
+							<li class="f-item">ï¿½ï¿½È¤</li>
+							<li class="f-item"><a href="seckill-index.html" target="_blank">ï¿½ï¿½É±</a></li>
 						</ul>
 					</div>
 					<div class="yui3-u Right"></div>
@@ -149,31 +149,31 @@
 		</div>
 	</div>
 </div>
-<!--Ò³Ãæ¶¥²¿ ½áÊø-->
+<!--Ò³ï¿½æ¶¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½-->
 	<div class="py-container">
 		<div id="item">
 			<div class="crumb-wrap">
 				<ul class="sui-breadcrumb">
-					<li><a href="#">·þÊÎÄÚÒÂ</a></li>
+					<li><a href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
 					<li><a href="#">Å®×°</a></li>
-					<li><a href="#">°ëÉíÈ¹</a></li>					
+					<li><a href="#">ï¿½ï¿½ï¿½ï¿½È¹</a></li>					
 				</ul>
 			</div>
 			<!--product-info-->
 			<div class="product-info">
 				<div class="fl preview-wrap">
-					<!--·Å´ó¾µÐ§¹û-->
+					<!--ï¿½Å´ï¿½Ð§ï¿½ï¿½-->
 					<div class="zoom">
-						<!--Ä¬ÈÏµÚÒ»¸öÔ¤ÀÀ-->
+						<!--Ä¬ï¿½Ïµï¿½Ò»ï¿½ï¿½Ô¤ï¿½ï¿½-->
 						<div id="preview" class="spec-preview">
 							<span class="jqzoom">	
 								<img jqimg="http://192.168.25.133/group1/M00/00/00/wKgZhVnGbYuAO6AHAAjlKdWCzvg253.jpg" src="http://192.168.25.133/group1/M00/00/00/wKgZhVnGbYuAO6AHAAjlKdWCzvg253.jpg" width="400px" height="400px" />
 				</span>
 						</div>
-						<!--ÏÂ·½µÄËõÂÔÍ¼-->
+						<!--ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼-->
 						<div class="spec-scroll">
 							<a class="prev">&lt;</a>
-							<!--×óÓÒ°´Å¥-->
+							<!--ï¿½ï¿½ï¿½Ò°ï¿½Å¥-->
 							<div class="items">
 								<ul>
 										<li><img src="http://192.168.25.133/group1/M00/00/00/wKgZhVnGbYuAO6AHAAjlKdWCzvg253.jpg" bimg="http://192.168.25.133/group1/M00/00/00/wKgZhVnGbYuAO6AHAAjlKdWCzvg253.jpg" onmousemove="preview(this)" /></li>
@@ -189,47 +189,47 @@
 					<div class="sku-name">
 						<h4>{{sku.title}}</h4>
 					</div>
-					<div class="news"><span>´òÕÛ´ÙÏú</span></div>
+					<div class="news"><span>ï¿½ï¿½ï¿½Û´ï¿½ï¿½ï¿½</span></div>
 					<div class="summary">
 						<div class="summary-wrap">
 							<div class="fl title">
-								<i>¼Û¡¡¡¡¸ñ</i>
+								<i>ï¿½Û¡ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 							</div>
 							<div class="fl price">
 								<i>?</i>
 								<em>{{sku.price}}</em>
-								<span>½µ¼ÛÍ¨Öª</span>
+								<span>ï¿½ï¿½ï¿½ï¿½Í¨Öª</span>
 							</div>
 							<div class="fr remark">
-								<i>ÀÛ¼ÆÆÀ¼Û</i><em>612188</em>
+								<i>ï¿½Û¼ï¿½ï¿½ï¿½ï¿½ï¿½</i><em>612188</em>
 							</div>
 						</div>
 						<div class="summary-wrap">
 							<div class="fl title">
-								<i>´Ù¡¡¡¡Ïú</i>
+								<i>ï¿½Ù¡ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 							</div>
 							<div class="fl fix-width">
-								<i class="red-bg">¼Ó¼Û¹º</i>
-								<em class="t-gray">Âú999.00Áí¼Ó20.00Ôª£¬»òÂú1999.00Áí¼Ó30.00Ôª£¬»òÂú2999.00Áí¼Ó40.00Ôª£¬¼´¿ÉÔÚ¹ºÎï³µ»»
-¹ºÈÈÏúÉÌÆ·</em>
+								<i class="red-bg">ï¿½Ó¼Û¹ï¿½</i>
+								<em class="t-gray">ï¿½ï¿½999.00ï¿½ï¿½ï¿½20.00Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1999.00ï¿½ï¿½ï¿½30.00Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2999.00ï¿½ï¿½ï¿½40.00Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï³µï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·</em>
 							</div>
 						</div>
 					</div>
 					<div class="support">
 						<div class="summary-wrap">
 							<div class="fl title">
-								<i>Ö§¡¡¡¡³Ö</i>
+								<i>Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 							</div>
 							<div class="fl fix-width">
-								<em class="t-gray">ÒÔ¾É»»ÐÂ£¬ÏÐÖÃÊÖ»ú»ØÊÕ  4GÌ×²Í³¬ÖµÇÀ  ÀñÆ·¹º</em>
+								<em class="t-gray">ï¿½Ô¾É»ï¿½ï¿½Â£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½  4Gï¿½×²Í³ï¿½Öµï¿½ï¿½  ï¿½ï¿½Æ·ï¿½ï¿½</em>
 							</div>
 						</div>
 						<div class="summary-wrap">
 							<div class="fl title">
-								<i>Åä ËÍ ÖÁ</i>
+								<i>ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½</i>
 							</div>
 							<div class="fl fix-width">
-								<em class="t-gray">Âú999.00Áí¼Ó20.00Ôª£¬»òÂú1999.00Áí¼Ó30.00Ôª£¬»òÂú2999.00Áí¼Ó40.00Ôª£¬¼´¿ÉÔÚ¹ºÎï³µ»»¹ºÈÈÏúÉÌÆ·</em>
+								<em class="t-gray">ï¿½ï¿½999.00ï¿½ï¿½ï¿½20.00Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1999.00ï¿½ï¿½ï¿½30.00Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½2999.00ï¿½ï¿½ï¿½40.00Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï³µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·</em>
 							</div>
 						</div>
 					</div>
@@ -238,27 +238,27 @@
 								<dl>
 									<dt>
 										<div class="fl title">
-											<i>ÍøÂç</i>
+											<i>ï¿½ï¿½ï¿½ï¿½</i>
 										</div>
 									</dt>								
-									<dd><a class="{{isSelected('ÍøÂç','ÒÆ¶¯3G')?'selected':''}}"
-									 ng-click="selectSpecification('ÍøÂç','ÒÆ¶¯3G')"
-									 href="javascript:;" >ÒÆ¶¯3G</a></dd>
-									<dd><a class="{{isSelected('ÍøÂç','ÒÆ¶¯4G')?'selected':''}}"
-									 ng-click="selectSpecification('ÍøÂç','ÒÆ¶¯4G')"
-									 href="javascript:;" >ÒÆ¶¯4G</a></dd>
+									<dd><a class="{{isSelected('ï¿½ï¿½ï¿½ï¿½','ï¿½Æ¶ï¿½3G')?'selected':''}}"
+									 ng-click="selectSpecification('ï¿½ï¿½ï¿½ï¿½','ï¿½Æ¶ï¿½3G')"
+									 href="javascript:;" >ï¿½Æ¶ï¿½3G</a></dd>
+									<dd><a class="{{isSelected('ï¿½ï¿½ï¿½ï¿½','ï¿½Æ¶ï¿½4G')?'selected':''}}"
+									 ng-click="selectSpecification('ï¿½ï¿½ï¿½ï¿½','ï¿½Æ¶ï¿½4G')"
+									 href="javascript:;" >ï¿½Æ¶ï¿½4G</a></dd>
 								</dl>
 								<dl>
 									<dt>
 										<div class="fl title">
-											<i>»úÉíÄÚ´æ</i>
+											<i>ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½</i>
 										</div>
 									</dt>								
-									<dd><a class="{{isSelected('»úÉíÄÚ´æ','16G')?'selected':''}}"
-									 ng-click="selectSpecification('»úÉíÄÚ´æ','16G')"
+									<dd><a class="{{isSelected('ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½','16G')?'selected':''}}"
+									 ng-click="selectSpecification('ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½','16G')"
 									 href="javascript:;" >16G</a></dd>
-									<dd><a class="{{isSelected('»úÉíÄÚ´æ','32G')?'selected':''}}"
-									 ng-click="selectSpecification('»úÉíÄÚ´æ','32G')"
+									<dd><a class="{{isSelected('ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½','32G')?'selected':''}}"
+									 ng-click="selectSpecification('ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½','32G')"
 									 href="javascript:;" >32G</a></dd>
 								</dl>
 							
@@ -277,7 +277,7 @@
 							<div class="fl">
 								<ul class="btn-choose unstyled">
 									<li>
-										<a href="cart.html" ng-click="addToCart()" target="_blank" class="sui-btn  btn-danger addshopcar">¼ÓÈë¹ºÎï³µ</a>
+										<a ng-click="addToCart()" target="_blank" class="sui-btn  btn-danger addshopcar">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</a>
 									</li>
 								</ul>
 							</div>
@@ -291,26 +291,26 @@
 					<ul class="sui-nav nav-tabs tab-wraped">
 						<li class="active">
 							<a href="#index" data-toggle="tab">
-								<span>Ïà¹Ø·ÖÀà</span>
+								<span>ï¿½ï¿½Ø·ï¿½ï¿½ï¿½</span>
 							</a>
 						</li>
 						<li>
 							<a href="#profile" data-toggle="tab">
-								<span>ÍÆ¼öÆ·ÅÆ</span>
+								<span>ï¿½Æ¼ï¿½Æ·ï¿½ï¿½</span>
 							</a>
 						</li>
 					</ul>
 					<div class="tab-content tab-wraped">
 						<div id="index" class="tab-pane active">
 							<ul class="part-list unstyled">
-								<li>ÊÖ»ú</li>
-								<li>ÊÖ»ú¿Ç</li>
-								<li>ÄÚ´æ¿¨</li>
-								<li>IphoneÅä¼þ</li>
-								<li>ÌùÄ¤</li>
-								<li>ÊÖ»ú¶ú»ú</li>
-								<li>ÒÆ¶¯µçÔ´</li>
-								<li>Æ½°åµçÄÔ</li>
+								<li>ï¿½Ö»ï¿½</li>
+								<li>ï¿½Ö»ï¿½ï¿½ï¿½</li>
+								<li>ï¿½Ú´æ¿¨</li>
+								<li>Iphoneï¿½ï¿½ï¿½</li>
+								<li>ï¿½ï¿½Ä¤</li>
+								<li>ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+								<li>ï¿½Æ¶ï¿½ï¿½ï¿½Ô´</li>
+								<li>Æ½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
 							</ul>
 							<ul class="goods-list unstyled">
 								<li>
@@ -319,7 +319,7 @@
 											<img src="img/_/part01.png" />
 										</div>
 										<div class="attr">
-											<em>AppleÆ»¹ûiPhone 6s (A1699)</em>
+											<em>AppleÆ»ï¿½ï¿½iPhone 6s (A1699)</em>
 										</div>
 										<div class="price">
 											<strong>
@@ -328,7 +328,7 @@
 										</strong>
 										</div>
 										<div class="operate">
-											<a href="javascript:void(0);" class="sui-btn btn-bordered">¼ÓÈë¹ºÎï³µ</a>
+											<a href="javascript:void(0);" class="sui-btn btn-bordered">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</a>
 										</div>
 									</div>
 								</li>
@@ -338,7 +338,7 @@
 											<img src="img/_/part02.png" />
 										</div>
 										<div class="attr">
-											<em>AppleÆ»¹ûiPhone 6s (A1699)</em>
+											<em>AppleÆ»ï¿½ï¿½iPhone 6s (A1699)</em>
 										</div>
 										<div class="price">
 											<strong>
@@ -347,7 +347,7 @@
 										</strong>
 										</div>
 										<div class="operate">
-											<a href="javascript:void(0);" class="sui-btn btn-bordered">¼ÓÈë¹ºÎï³µ</a>
+											<a href="javascript:void(0);" class="sui-btn btn-bordered">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</a>
 										</div>
 									</div>
 								</li>
@@ -357,7 +357,7 @@
 											<img src="img/_/part03.png" />
 										</div>
 										<div class="attr">
-											<em>AppleÆ»¹ûiPhone 6s (A1699)</em>
+											<em>AppleÆ»ï¿½ï¿½iPhone 6s (A1699)</em>
 										</div>
 										<div class="price">
 											<strong>
@@ -366,7 +366,7 @@
 										</strong>
 										</div>
 										<div class="operate">
-											<a href="javascript:void(0);" class="sui-btn btn-bordered">¼ÓÈë¹ºÎï³µ</a>
+											<a href="javascript:void(0);" class="sui-btn btn-bordered">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</a>
 										</div>
 									</div>
 									<div class="list-wrap">
@@ -374,7 +374,7 @@
 											<img src="img/_/part02.png" />
 										</div>
 										<div class="attr">
-											<em>AppleÆ»¹ûiPhone 6s (A1699)</em>
+											<em>AppleÆ»ï¿½ï¿½iPhone 6s (A1699)</em>
 										</div>
 										<div class="price">
 											<strong>
@@ -383,7 +383,7 @@
 										</strong>
 										</div>
 										<div class="operate">
-											<a href="javascript:void(0);" class="sui-btn btn-bordered">¼ÓÈë¹ºÎï³µ</a>
+											<a href="javascript:void(0);" class="sui-btn btn-bordered">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</a>
 										</div>
 									</div>
 									<div class="list-wrap">
@@ -391,7 +391,7 @@
 											<img src="img/_/part03.png" />
 										</div>
 										<div class="attr">
-											<em>AppleÆ»¹ûiPhone 6s (A1699)</em>
+											<em>AppleÆ»ï¿½ï¿½iPhone 6s (A1699)</em>
 										</div>
 										<div class="price">
 											<strong>
@@ -400,27 +400,27 @@
 										</strong>
 										</div>
 										<div class="operate">
-											<a href="javascript:void(0);" class="sui-btn btn-bordered">¼ÓÈë¹ºÎï³µ</a>
+											<a href="javascript:void(0);" class="sui-btn btn-bordered">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</a>
 										</div>
 									</div>
 								</li>
 							</ul>
 						</div>
 						<div id="profile" class="tab-pane">
-							<p>ÍÆ¼öÆ·ÅÆ</p>
+							<p>ï¿½Æ¼ï¿½Æ·ï¿½ï¿½</p>
 						</div>
 					</div>
 				</div>
 				<div class="fr detail">
 					<div class="clearfix fitting">
-						<h4 class="kt">Ñ¡Ôñ´îÅä</h4>
+						<h4 class="kt">Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½</h4>
 						<div class="good-suits">
 							<div class="fl master">
 								<div class="list-wrap">
 									<div class="p-img">
 										<img src="img/_/l-m01.png" />
 									</div>
-									<em>£¤5299</em>
+									<em>ï¿½ï¿½5299</em>
 									<i>+</i>
 								</div>
 							</div>
@@ -430,28 +430,28 @@
 										<div id="">
 											<img src="img/_/dp01.png" />
 										</div>
-										<i>Feless·ÑÀÕË¹VR</i>
+										<i>Felessï¿½ï¿½ï¿½ï¿½Ë¹VR</i>
 										<label data-toggle="checkbox" class="checkbox-pretty">
     <input type="checkbox"><span>39</span>
   </label>
 									</li>
 									<li class="">
 										<div id=""><img src="img/_/dp02.png" /> </div>
-										<i>Feless·ÑÀÕË¹VR</i>
+										<i>Felessï¿½ï¿½ï¿½ï¿½Ë¹VR</i>
 										<label data-toggle="checkbox" class="checkbox-pretty">
     <input type="checkbox"><span>50</span>
   </label>
 									</li>
 									<li class="">
 										<div id=""><img src="img/_/dp03.png" /></div>
-										<i>Feless·ÑÀÕË¹VR</i>
+										<i>Felessï¿½ï¿½ï¿½ï¿½Ë¹VR</i>
 										<label data-toggle="checkbox" class="checkbox-pretty">
     <input type="checkbox"><span>59</span>
   </label>
 									</li>
 									<li class="">
 										<div id=""><img src="img/_/dp04.png" /></div>
-										<i>Feless·ÑÀÕË¹VR</i>
+										<i>Felessï¿½ï¿½ï¿½ï¿½Ë¹VR</i>
 										<label data-toggle="checkbox" class="checkbox-pretty">
     <input type="checkbox"><span>99</span>
   </label>
@@ -459,10 +459,10 @@
 								</ul>
 							</div>
 							<div class="fr result">
-								<div class="num">ÒÑÑ¡¹º0¼þÉÌÆ·</div>
-								<div class="price-tit"><strong>Ì×²Í¼Û</strong></div>
-								<div class="price">£¤5299</div>
-								<button class="sui-btn  btn-danger addshopcar">¼ÓÈë¹ºÎï³µ</button>
+								<div class="num">ï¿½ï¿½Ñ¡ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½Æ·</div>
+								<div class="price-tit"><strong>ï¿½×²Í¼ï¿½</strong></div>
+								<div class="price">ï¿½ï¿½5299</div>
+								<button class="sui-btn  btn-danger addshopcar">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</button>
 							</div>
 						</div>
 					</div>
@@ -470,27 +470,27 @@
 						<ul class="sui-nav nav-tabs tab-wraped">
 							<li class="active">
 								<a href="#one" data-toggle="tab">
-									<span>ÉÌÆ·½éÉÜ</span>
+									<span>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</span>
 								</a>
 							</li>
 							<li>
 								<a href="#two" data-toggle="tab">
-									<span>¹æ¸ñÓë°ü×°</span>
+									<span>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°</span>
 								</a>
 							</li>
 							<li>
 								<a href="#three" data-toggle="tab">
-									<span>ÊÛºó±£ÕÏ</span>
+									<span>ï¿½Ûºï¿½ï¿½ï¿½</span>
 								</a>
 							</li>
 							<li>
 								<a href="#four" data-toggle="tab">
-									<span>ÉÌÆ·ÆÀ¼Û</span>
+									<span>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</span>
 								</a>
 							</li>
 							<li>
 								<a href="#five" data-toggle="tab">
-									<span>ÊÖ»úÉçÇø</span>
+									<span>ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½</span>
 								</a>
 							</li>
 						</ul>
@@ -498,36 +498,36 @@
 						<div class="tab-content tab-wraped">
 							<div id="one" class="tab-pane active">
 								<ul class="goods-intro unstyled">
-									<li>·Ö±æÂÊ£º1920*1080(FHD)</li>
-									<li>ºóÖÃÉãÏñÍ·£º1200ÍòÏñËØ</li>
-									<li>Ç°ÖÃÉãÏñÍ·£º500ÍòÏñËØ</li>
-									<li>ºË Êý£ºÆäËû</li>
-									<li>Æµ ÂÊ£ºÒÔ¹ÙÍøÐÅÏ¢Îª×¼</li>
-									<li>Æ·ÅÆ£º Apple</li>
-									<li>ÉÌÆ·Ãû³Æ£ºAPPLEiPhone 6s Plus</li>
-									<li>ÉÌÆ·±àºÅ£º1861098</li>
-									<li>ÉÌÆ·Ã«ÖØ£º0.51kg</li>
-									<li>ÉÌÆ·²úµØ£ºÖÐ¹ú´óÂ½</li>
-									<li>ÈÈµã£ºÖ¸ÎÆÊ¶±ð£¬Apple Pay£¬½ðÊô»úÉí£¬ÅÄÕÕÉñÆ÷</li>
-									<li>ÏµÍ³£ºÆ»¹û£¨IOS£©</li>
-									<li>ÏñËØ£º1000-1600Íò</li>
-									<li>»úÉíÄÚ´æ£º64GB</li>
+									<li>ï¿½Ö±ï¿½ï¿½Ê£ï¿½1920*1080(FHD)</li>
+									<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½1200ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+									<li>Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½500ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+									<li>ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+									<li>Æµ ï¿½Ê£ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Îª×¼</li>
+									<li>Æ·ï¿½Æ£ï¿½ Apple</li>
+									<li>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Æ£ï¿½APPLEiPhone 6s Plus</li>
+									<li>ï¿½ï¿½Æ·ï¿½ï¿½Å£ï¿½1861098</li>
+									<li>ï¿½ï¿½Æ·Ã«ï¿½Ø£ï¿½0.51kg</li>
+									<li>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ø£ï¿½ï¿½Ð¹ï¿½ï¿½ï¿½Â½</li>
+									<li>ï¿½Èµã£ºÖ¸ï¿½ï¿½Ê¶ï¿½ï¿½Apple Payï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+									<li>ÏµÍ³ï¿½ï¿½Æ»ï¿½ï¿½ï¿½ï¿½IOSï¿½ï¿½</li>
+									<li>ï¿½ï¿½ï¿½Ø£ï¿½1000-1600ï¿½ï¿½</li>
+									<li>ï¿½ï¿½ï¿½ï¿½ï¿½Ú´æ£º64GB</li>
 								</ul>
 								<div class="intro-detail">
 									11<img src="http://localhost:9102/plugins/kindeditor/plugins/emoticons/images/10.gif" border="0" alt="" /><img src="http://localhost:9102/plugins/kindeditor/plugins/emoticons/images/20.gif" border="0" alt="" />
 								</div>
 							</div>
 							<div id="two" class="tab-pane">
-								<p>ËÜÁÏ´ü</p>
+								<p>ï¿½ï¿½ï¿½Ï´ï¿½</p>
 							</div>
 							<div id="three" class="tab-pane">
-								<p>ÎÞ</p>
+								<p>ï¿½ï¿½</p>
 							</div>
 							<div id="four" class="tab-pane">
-								<p>ÉÌÆ·ÆÀ¼Û</p>
+								<p>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</p>
 							</div>
 							<div id="five" class="tab-pane">
-								<p>ÊÖ»úÉçÇø</p>
+								<p>ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½</p>
 							</div>
 						</div>
 					</div>
@@ -536,7 +536,7 @@
 			<!--like-->
 			<div class="clearfix"></div>
 			<div class="like">
-				<h4 class="kt">²ÂÄãÏ²»¶</h4>
+				<h4 class="kt">ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½</h4>
 				<div class="like-list">
 					<ul class="yui3-g">
 						<li class="yui3-u-1-6">
@@ -545,7 +545,7 @@
 									<img src="img/_/itemlike01.png" />
 								</div>
 								<div class="attr">
-									<em>DELL´÷¶ûIns 15MR-7528SS 15Ó¢´ç ÒøÉ« ±Ê¼Ç±¾</em>
+									<em>DELLï¿½ï¿½ï¿½ï¿½Ins 15MR-7528SS 15Ó¢ï¿½ï¿½ ï¿½ï¿½É« ï¿½Ê¼Ç±ï¿½</em>
 								</div>
 								<div class="price">
 									<strong>
@@ -554,7 +554,7 @@
 										</strong>
 								</div>
 								<div class="commit">
-									<i class="command">ÒÑÓÐ6ÈËÆÀ¼Û</i>
+									<i class="command">ï¿½ï¿½ï¿½ï¿½6ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 								</div>
 							</div>
 						</li>
@@ -564,7 +564,7 @@
 									<img src="img/_/itemlike02.png" />
 								</div>
 								<div class="attr">
-									<em>AppleÆ»¹ûiPhone 6s/6s Plus 16G 64G 128G</em>
+									<em>AppleÆ»ï¿½ï¿½iPhone 6s/6s Plus 16G 64G 128G</em>
 								</div>
 								<div class="price">
 									<strong>
@@ -573,7 +573,7 @@
 										</strong>
 								</div>
 								<div class="commit">
-									<i class="command">ÒÑÓÐ700ÈËÆÀ¼Û</i>
+									<i class="command">ï¿½ï¿½ï¿½ï¿½700ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 								</div>
 							</div>
 						</li>
@@ -583,7 +583,7 @@
 									<img src="img/_/itemlike03.png" />
 								</div>
 								<div class="attr">
-									<em>DELL´÷¶ûIns 15MR-7528SS 15Ó¢´ç ÒøÉ« ±Ê¼Ç±¾</em>
+									<em>DELLï¿½ï¿½ï¿½ï¿½Ins 15MR-7528SS 15Ó¢ï¿½ï¿½ ï¿½ï¿½É« ï¿½Ê¼Ç±ï¿½</em>
 								</div>
 								<div class="price">
 									<strong>
@@ -592,7 +592,7 @@
 										</strong>
 								</div>
 								<div class="commit">
-									<i class="command">ÒÑÓÐ700ÈËÆÀ¼Û</i>
+									<i class="command">ï¿½ï¿½ï¿½ï¿½700ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 								</div>
 							</div>
 						</li>
@@ -602,7 +602,7 @@
 									<img src="img/_/itemlike04.png" />
 								</div>
 								<div class="attr">
-									<em>DELL´÷¶ûIns 15MR-7528SS 15Ó¢´ç ÒøÉ« ±Ê¼Ç±¾</em>
+									<em>DELLï¿½ï¿½ï¿½ï¿½Ins 15MR-7528SS 15Ó¢ï¿½ï¿½ ï¿½ï¿½É« ï¿½Ê¼Ç±ï¿½</em>
 								</div>
 								<div class="price">
 									<strong>
@@ -611,7 +611,7 @@
 										</strong>
 								</div>
 								<div class="commit">
-									<i class="command">ÒÑÓÐ700ÈËÆÀ¼Û</i>
+									<i class="command">ï¿½ï¿½ï¿½ï¿½700ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 								</div>
 							</div>
 						</li>
@@ -621,7 +621,7 @@
 									<img src="img/_/itemlike05.png" />
 								</div>
 								<div class="attr">
-									<em>DELL´÷¶ûIns 15MR-7528SS 15Ó¢´ç ÒøÉ« ±Ê¼Ç±¾</em>
+									<em>DELLï¿½ï¿½ï¿½ï¿½Ins 15MR-7528SS 15Ó¢ï¿½ï¿½ ï¿½ï¿½É« ï¿½Ê¼Ç±ï¿½</em>
 								</div>
 								<div class="price">
 									<strong>
@@ -630,7 +630,7 @@
 										</strong>
 								</div>
 								<div class="commit">
-									<i class="command">ÒÑÓÐ700ÈËÆÀ¼Û</i>
+									<i class="command">ï¿½ï¿½ï¿½ï¿½700ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 								</div>
 							</div>
 						</li>
@@ -640,7 +640,7 @@
 									<img src="img/_/itemlike06.png" />
 								</div>
 								<div class="attr">
-									<em>DELL´÷¶ûIns 15MR-7528SS 15Ó¢´ç ÒøÉ« ±Ê¼Ç±¾</em>
+									<em>DELLï¿½ï¿½ï¿½ï¿½Ins 15MR-7528SS 15Ó¢ï¿½ï¿½ ï¿½ï¿½É« ï¿½Ê¼Ç±ï¿½</em>
 								</div>
 								<div class="price">
 									<strong>
@@ -649,7 +649,7 @@
 										</strong>
 								</div>
 								<div class="commit">
-									<i class="command">ÒÑÓÐ700ÈËÆÀ¼Û</i>
+									<i class="command">ï¿½ï¿½ï¿½ï¿½700ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</i>
 								</div>
 							</div>
 						</li>
@@ -658,9 +658,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- µ×²¿À¸Î» -->
+	<!-- ï¿½×²ï¿½ï¿½ï¿½Î» -->
 	
-<!--Ò³Ãæµ×²¿  ¿ªÊ¼ -->
+<!--Ò³ï¿½ï¿½×²ï¿½  ï¿½ï¿½Ê¼ -->
 <div class="clearfix footer">
 	<div class="py-container">
 		<div class="footlink">
@@ -670,8 +670,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>ÕýÆ·±£ÕÏ</h4>
-							<p>ÕýÆ·±£ÕÏ£¬Ìá¹©·¢Æ±</p>
+							<h4>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</h4>
+							<p>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ï£ï¿½ï¿½á¹©ï¿½ï¿½Æ±</p>
 						</div>
 
 					</li>
@@ -679,8 +679,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>ÕýÆ·±£ÕÏ</h4>
-							<p>ÕýÆ·±£ÕÏ£¬Ìá¹©·¢Æ±</p>
+							<h4>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</h4>
+							<p>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ï£ï¿½ï¿½á¹©ï¿½ï¿½Æ±</p>
 						</div>
 
 					</li>
@@ -688,8 +688,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>ÕýÆ·±£ÕÏ</h4>
-							<p>ÕýÆ·±£ÕÏ£¬Ìá¹©·¢Æ±</p>
+							<h4>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</h4>
+							<p>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ï£ï¿½ï¿½á¹©ï¿½ï¿½Æ±</p>
 						</div>
 
 					</li>
@@ -697,8 +697,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>ÕýÆ·±£ÕÏ</h4>
-							<p>ÕýÆ·±£ÕÏ£¬Ìá¹©·¢Æ±</p>
+							<h4>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</h4>
+							<p>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ï£ï¿½ï¿½á¹©ï¿½ï¿½Æ±</p>
 						</div>
 
 					</li>
@@ -706,8 +706,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>ÕýÆ·±£ÕÏ</h4>
-							<p>ÕýÆ·±£ÕÏ£¬Ìá¹©·¢Æ±</p>
+							<h4>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½</h4>
+							<p>ï¿½ï¿½Æ·ï¿½ï¿½ï¿½Ï£ï¿½ï¿½á¹©ï¿½ï¿½Æ±</p>
 						</div>
 
 					</li>
@@ -716,124 +716,124 @@
 			<div class="clearfix Mod-list">
 				<div class="yui3-g">
 					<div class="yui3-u-1-6">
-						<h4>¹ºÎïÖ¸ÄÏ</h4>
+						<h4>ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½</h4>
 						<ul class="unstyled">
-							<li>¹ºÎïÁ÷³Ì</li>
-							<li>»áÔ±½éÉÜ</li>
-							<li>Éú»îÂÃÐÐ/ÍÅ¹º</li>
-							<li>³£¼ûÎÊÌâ</li>
-							<li>¹ºÎïÖ¸ÄÏ</li>
+							<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+							<li>ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½</li>
+							<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½Å¹ï¿½</li>
+							<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+							<li>ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½</li>
 						</ul>
 
 					</div>
 					<div class="yui3-u-1-6">
-						<h4>ÅäËÍ·½Ê½</h4>
+						<h4>ï¿½ï¿½ï¿½Í·ï¿½Ê½</h4>
 						<ul class="unstyled">
-							<li>ÉÏÃÅ×ÔÌá</li>
-							<li>211ÏÞÊ±´ï</li>
-							<li>ÅäËÍ·þÎñ²éÑ¯</li>
-							<li>ÅäËÍ·ÑÊÕÈ¡±ê×¼</li>
-							<li>º£ÍâÅäËÍ</li>
+							<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+							<li>211ï¿½ï¿½Ê±ï¿½ï¿½</li>
+							<li>ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½Ñ¯</li>
+							<li>ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½È¡ï¿½ï¿½×¼</li>
+							<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
 						</ul>
 					</div>
 					<div class="yui3-u-1-6">
-						<h4>Ö§¸¶·½Ê½</h4>
+						<h4>Ö§ï¿½ï¿½ï¿½ï¿½Ê½</h4>
 						<ul class="unstyled">
-							<li>»õµ½¸¶¿î</li>
-							<li>ÔÚÏßÖ§¸¶</li>
-							<li>·ÖÆÚ¸¶¿î</li>
-							<li>ÓÊ¾Ö»ã¿î</li>
-							<li>¹«Ë¾×ªÕË</li>
+							<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+							<li>ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½</li>
+							<li>ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½</li>
+							<li>ï¿½Ê¾Ö»ï¿½ï¿½</li>
+							<li>ï¿½ï¿½Ë¾×ªï¿½ï¿½</li>
 						</ul>
 					</div>
 					<div class="yui3-u-1-6">
-						<h4>ÊÛºó·þÎñ</h4>
+						<h4>ï¿½Ûºï¿½ï¿½ï¿½ï¿½</h4>
 						<ul class="unstyled">
-							<li>ÊÛºóÕþ²ß</li>
-							<li>¼Û¸ñ±£»¤</li>
-							<li>ÍË¿îËµÃ÷</li>
-							<li>·µÐÞ/ÍË»»»õ</li>
-							<li>È¡Ïû¶©µ¥</li>
+							<li>ï¿½Ûºï¿½ï¿½ï¿½ï¿½ï¿½</li>
+							<li>ï¿½Û¸ñ±£»ï¿½</li>
+							<li>ï¿½Ë¿ï¿½Ëµï¿½ï¿½</li>
+							<li>ï¿½ï¿½ï¿½ï¿½/ï¿½Ë»ï¿½ï¿½ï¿½</li>
+							<li>È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
 						</ul>
 					</div>
 					<div class="yui3-u-1-6">
-						<h4>ÌØÉ«·þÎñ</h4>
+						<h4>ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½</h4>
 						<ul class="unstyled">
-							<li>¶á±¦µº</li>
-							<li>DIY×°»ú</li>
-							<li>ÑÓ±£·þÎñ</li>
-							<li>Æ·ÓÅ¹ºE¿¨</li>
-							<li>Æ·ÓÅ¹ºÍ¨ÐÅ</li>
+							<li>ï¿½á±¦ï¿½ï¿½</li>
+							<li>DIY×°ï¿½ï¿½</li>
+							<li>ï¿½Ó±ï¿½ï¿½ï¿½ï¿½ï¿½</li>
+							<li>Æ·ï¿½Å¹ï¿½Eï¿½ï¿½</li>
+							<li>Æ·ï¿½Å¹ï¿½Í¨ï¿½ï¿½</li>
 						</ul>
 					</div>
 					<div class="yui3-u-1-6">
-						<h4>°ïÖúÖÐÐÄ</h4>
+						<h4>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</h4>
 						<img src="img/wx_cz.jpg">
 					</div>
 				</div>
 			</div>
 			<div class="Mod-copyright">
 				<ul class="helpLink">
-					<li>¹ØÓÚÎÒÃÇ<span class="space"></span></li>
-					<li>ÁªÏµÎÒÃÇ<span class="space"></span></li>
-					<li>¹ØÓÚÎÒÃÇ<span class="space"></span></li>
-					<li>ÉÌ¼ÒÈë×¤<span class="space"></span></li>
-					<li>ÓªÏúÖÐÐÄ<span class="space"></span></li>
-					<li>ÓÑÇéÁ´½Ó<span class="space"></span></li>
-					<li>¹ØÓÚÎÒÃÇ<span class="space"></span></li>
-					<li>ÓªÏúÖÐÐÄ<span class="space"></span></li>
-					<li>ÓÑÇéÁ´½Ó<span class="space"></span></li>
-					<li>¹ØÓÚÎÒÃÇ</li>
+					<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<span class="space"></span></li>
+					<li>ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½<span class="space"></span></li>
+					<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<span class="space"></span></li>
+					<li>ï¿½Ì¼ï¿½ï¿½ï¿½×¤<span class="space"></span></li>
+					<li>Óªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<span class="space"></span></li>
+					<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<span class="space"></span></li>
+					<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<span class="space"></span></li>
+					<li>Óªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<span class="space"></span></li>
+					<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<span class="space"></span></li>
+					<li>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</li>
 				</ul>
-				<p>µØÖ·£º±±¾©ÊÐ²ýÆ½Çø½¨²Ä³ÇÎ÷Â·½ðÑàÁú°ì¹«Â¥Ò»²ã ÓÊ±à£º100096 µç»°£º400-618-4000 ´«Õæ£º010-82935100</p>
-				<p>¾©ICP±¸08001421ºÅ¾©¹«Íø°²±¸110108007702</p>
+				<p>ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì¹«Â¥Ò»ï¿½ï¿½ ï¿½Ê±à£º100096 ï¿½ç»°ï¿½ï¿½400-618-4000 ï¿½ï¿½ï¿½æ£º010-82935100</p>
+				<p>ï¿½ï¿½ICPï¿½ï¿½08001421ï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½110108007702</p>
 			</div>
 		</div>
 	</div>
 </div>
 
 	
-	<!--²àÀ¸Ãæ°å¿ªÊ¼-->
+	<!--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å¿ªÊ¼-->
 <div class="J-global-toolbar">
 	<div class="toolbar-wrap J-wrap">
 		<div class="toolbar">
 			<div class="toolbar-panels J-panel">
 
-				<!-- ¹ºÎï³µ -->
+				<!-- ï¿½ï¿½ï¿½ï³µ -->
 				<div style="visibility: hidden;" class="J-content toolbar-panel tbar-panel-cart toolbar-animate-out">
 					<h3 class="tbar-panel-header J-panel-header">
-						<a href="" class="title"><i></i><em class="title">¹ºÎï³µ</em></a>
+						<a href="" class="title"><i></i><em class="title">ï¿½ï¿½ï¿½ï³µ</em></a>
 						<span class="close-panel J-close" onclick="cartPanelView.tbar_panel_close('cart');" ></span>
 					</h3>
 					<div class="tbar-panel-main">
 						<div class="tbar-panel-content J-panel-content">
 							<div id="J-cart-tips" class="tbar-tipbox hide">
 								<div class="tip-inner">
-									<span class="tip-text">»¹Ã»ÓÐµÇÂ¼£¬µÇÂ¼ºóÉÌÆ·½«±»±£´æ</span>
-									<a href="#none" class="tip-btn J-login">µÇÂ¼</a>
+									<span class="tip-text">ï¿½ï¿½Ã»ï¿½Ðµï¿½Â¼ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
+									<a href="#none" class="tip-btn J-login">ï¿½ï¿½Â¼</a>
 								</div>
 							</div>
 							<div id="J-cart-render">
-								<!-- ÁÐ±í -->
+								<!-- ï¿½Ð±ï¿½ -->
 								<div id="cart-list" class="tbar-cart-list">
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- Ð¡¼Æ -->
+					<!-- Ð¡ï¿½ï¿½ -->
 					<div id="cart-footer" class="tbar-panel-footer J-panel-footer">
 						<div class="tbar-checkout">
-							<div class="jtc-number"> <strong class="J-count" id="cart-number">0</strong>¼þÉÌÆ· </div>
-							<div class="jtc-sum"> ¹²¼Æ£º<strong class="J-total" id="cart-sum">?0</strong> </div>
-							<a class="jtc-btn J-btn" href="#none" target="_blank">È¥¹ºÎï³µ½áËã</a>
+							<div class="jtc-number"> <strong class="J-count" id="cart-number">0</strong>ï¿½ï¿½ï¿½ï¿½Æ· </div>
+							<div class="jtc-sum"> ï¿½ï¿½ï¿½Æ£ï¿½<strong class="J-total" id="cart-sum">?0</strong> </div>
+							<a class="jtc-btn J-btn" href="#none" target="_blank">È¥ï¿½ï¿½ï¿½ï³µï¿½ï¿½ï¿½ï¿½</a>
 						</div>
 					</div>
 				</div>
 
-				<!-- ÎÒµÄ¹Ø×¢ -->
+				<!-- ï¿½ÒµÄ¹ï¿½×¢ -->
 				<div style="visibility: hidden;" data-name="follow" class="J-content toolbar-panel tbar-panel-follow">
 					<h3 class="tbar-panel-header J-panel-header">
-						<a href="#" target="_blank" class="title"> <i></i> <em class="title">ÎÒµÄ¹Ø×¢</em> </a>
+						<a href="#" target="_blank" class="title"> <i></i> <em class="title">ï¿½ÒµÄ¹ï¿½×¢</em> </a>
 						<span class="close-panel J-close" onclick="cartPanelView.tbar_panel_close('follow');"></span>
 					</h3>
 					<div class="tbar-panel-main">
@@ -846,10 +846,10 @@
 					<div class="tbar-panel-footer J-panel-footer"></div>
 				</div>
 
-				<!-- ÎÒµÄ×ã¼£ -->
+				<!-- ï¿½Òµï¿½ï¿½ã¼£ -->
 				<div style="visibility: hidden;" class="J-content toolbar-panel tbar-panel-history toolbar-animate-in">
 					<h3 class="tbar-panel-header J-panel-header">
-						<a href="#" target="_blank" class="title"> <i></i> <em class="title">ÎÒµÄ×ã¼£</em> </a>
+						<a href="#" target="_blank" class="title"> <i></i> <em class="title">ï¿½Òµï¿½ï¿½ã¼£</em> </a>
 						<span class="close-panel J-close" onclick="cartPanelView.tbar_panel_close('history');"></span>
 					</h3>
 					<div class="tbar-panel-main">
@@ -858,16 +858,16 @@
 								<ul>
 									<!--<li class="jth-item">
 										<a href="#" class="img-wrap"> <img src=".portal/img/like_03.png" height="100" width="100" /> </a>
-										<a class="add-cart-button" href="#" target="_blank">¼ÓÈë¹ºÎï³µ</a>
-										<a href="#" target="_blank" class="price">£¤498.00</a>
+										<a class="add-cart-button" href="#" target="_blank">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</a>
+										<a href="#" target="_blank" class="price">ï¿½ï¿½498.00</a>
 									</li>
 									<li class="jth-item">
 										<a href="#" class="img-wrap"> <img src="portal/img/like_02.png" height="100" width="100" /></a>
-										<a class="add-cart-button" href="#" target="_blank">¼ÓÈë¹ºÎï³µ</a>
-										<a href="#" target="_blank" class="price">£¤498.00</a>
+										<a class="add-cart-button" href="#" target="_blank">ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ</a>
+										<a href="#" target="_blank" class="price">ï¿½ï¿½498.00</a>
 									</li>-->
 								</ul>
-								<a href="#" class="history-bottom-more" target="_blank">²é¿´¸ü¶à×ã¼£ÉÌÆ· &gt;&gt;</a>
+								<a href="#" class="history-bottom-more" target="_blank">ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ã¼£ï¿½ï¿½Æ· &gt;&gt;</a>
 							</div>
 						</div>
 					</div>
@@ -878,19 +878,19 @@
 
 			<div class="toolbar-header"></div>
 
-			<!-- ²àÀ¸°´Å¥ -->
+			<!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥ -->
 			<div class="toolbar-tabs J-tab">
-				<div onclick="cartPanelView.tabItemClick('cart')" class="toolbar-tab tbar-tab-cart" data="¹ºÎï³µ" tag="cart" >
+				<div onclick="cartPanelView.tabItemClick('cart')" class="toolbar-tab tbar-tab-cart" data="ï¿½ï¿½ï¿½ï³µ" tag="cart" >
 					<i class="tab-ico"></i>
 					<em class="tab-text"></em>
 					<span class="tab-sub J-count " id="tab-sub-cart-count">0</span>
 				</div>
-				<div onclick="cartPanelView.tabItemClick('follow')" class="toolbar-tab tbar-tab-follow" data="ÎÒµÄ¹Ø×¢" tag="follow" >
+				<div onclick="cartPanelView.tabItemClick('follow')" class="toolbar-tab tbar-tab-follow" data="ï¿½ÒµÄ¹ï¿½×¢" tag="follow" >
 					<i class="tab-ico"></i>
 					<em class="tab-text"></em>
 					<span class="tab-sub J-count hide">0</span>
 				</div>
-				<div onclick="cartPanelView.tabItemClick('history')" class="toolbar-tab tbar-tab-history" data="ÎÒµÄ×ã¼£" tag="history" >
+				<div onclick="cartPanelView.tabItemClick('history')" class="toolbar-tab tbar-tab-history" data="ï¿½Òµï¿½ï¿½ã¼£" tag="history" >
 					<i class="tab-ico"></i>
 					<em class="tab-text"></em>
 					<span class="tab-sub J-count hide">0</span>
@@ -898,8 +898,8 @@
 			</div>
 
 			<div class="toolbar-footer">
-				<div class="toolbar-tab tbar-tab-top" > <a href="#"> <i class="tab-ico  "></i> <em class="footer-tab-text">¶¥²¿</em> </a> </div>
-				<div class="toolbar-tab tbar-tab-feedback" > <a href="#" target="_blank"> <i class="tab-ico"></i> <em class="footer-tab-text ">·´À¡</em> </a> </div>
+				<div class="toolbar-tab tbar-tab-top" > <a href="#"> <i class="tab-ico  "></i> <em class="footer-tab-text">ï¿½ï¿½ï¿½ï¿½</em> </a> </div>
+				<div class="toolbar-tab tbar-tab-feedback" > <a href="#" target="_blank"> <i class="tab-ico"></i> <em class="footer-tab-text ">ï¿½ï¿½ï¿½ï¿½</em> </a> </div>
 			</div>
 
 			<div class="toolbar-mini"></div>
@@ -914,16 +914,16 @@
 <script type="text/template" id="tbar-cart-item-template">
 	<div class="tbar-cart-item" >
 		<div class="jtc-item-promo">
-			<em class="promo-tag promo-mz">ÂúÔù<i class="arrow"></i></em>
-			<div class="promo-text">ÒÑ¹ºÂú600Ôª£¬Äú¿ÉÁìÔùÆ·</div>
+			<em class="promo-tag promo-mz">ï¿½ï¿½ï¿½ï¿½<i class="arrow"></i></em>
+			<div class="promo-text">ï¿½Ñ¹ï¿½ï¿½ï¿½600Ôªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·</div>
 		</div>
 		<div class="jtc-item-goods">
 			<span class="p-img"><a href="#" target="_blank"><img src="{2}" alt="{1}" height="50" width="50" /></a></span>
 			<div class="p-name">
 				<a href="#">{1}</a>
 			</div>
-			<div class="p-price"><strong>?{3}</strong>¡Á{4} </div>
-			<a href="#none" class="p-del J-del">É¾³ý</a>
+			<div class="p-price"><strong>?{3}</strong>ï¿½ï¿½{4} </div>
+			<a href="#none" class="p-del J-del">É¾ï¿½ï¿½</a>
 		</div>
 	</div>
 </script>
@@ -954,7 +954,7 @@ $(function(){
 <script type="text/javascript" src="index/index.js"></script>
 
 
-<!--Ò³Ãæµ×²¿  ½áÊø -->
+<!--Ò³ï¿½ï¿½×²ï¿½  ï¿½ï¿½ï¿½ï¿½ -->
 </body>
 
 </html>

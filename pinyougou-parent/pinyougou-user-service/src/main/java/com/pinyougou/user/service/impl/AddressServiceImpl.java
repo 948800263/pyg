@@ -1,4 +1,5 @@
-package com.pinyougou.sellergoods.service.impl;
+package com.pinyougou.user.service.impl;
+import java.awt.geom.Area;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.alibaba.dubbo.config.annotation.Service;
@@ -8,7 +9,7 @@ import com.pinyougou.mapper.TbAddressMapper;
 import com.pinyougou.pojo.TbAddress;
 import com.pinyougou.pojo.TbAddressExample;
 import com.pinyougou.pojo.TbAddressExample.Criteria;
-import com.pinyougou.sellergoods.service.AddressService;
+import com.pinyougou.user.service.AddressService;
 
 import entity.PageResult;
 
@@ -123,5 +124,13 @@ public class AddressServiceImpl implements AddressService {
 		Page<TbAddress> page= (Page<TbAddress>)addressMapper.selectByExample(example);		
 		return new PageResult(page.getTotal(), page.getResult());
 	}
+
+		@Override
+		public List<TbAddress> findListByUserId(String userId) {
+			TbAddressExample example =	new TbAddressExample();
+			example.createCriteria().andUserIdEqualTo(userId);
+			List<TbAddress> list = addressMapper.selectByExample(example);
+			return list;
+		}
 	
 }

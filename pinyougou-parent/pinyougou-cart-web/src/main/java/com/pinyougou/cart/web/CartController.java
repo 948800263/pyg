@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,8 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import com.pinyougou.cart.service.CartService;
 import com.pinyougou.pojo.Cart;
+import com.pinyougou.pojo.TbAddress;
+import com.pinyougou.user.service.AddressService;
 
 import entity.Result;
 
@@ -74,7 +77,10 @@ public class CartController {
 		 * @return
 		 */
 		@RequestMapping("/addGoodsToCartList")
+		//@CrossOrigin(origins="http://localhost:9105",allowCredentials="true")
 		public Result addGoodsToCartList(Long itemId,Integer num){
+			response.setHeader("Access-Control-Allow-Origin", "http://localhost:9105");
+			response.setHeader("Access-Control-Allow-Credentials", "true");
 			
 			//得到登陆人账号,判断当前是否有人登陆
 			String username = SecurityContextHolder.getContext().getAuthentication().getName(); 

@@ -33,10 +33,14 @@ public class CartServiceImpl implements CartService{
 				String sellerId = tbItem.getSellerId();
 				//3.根据商家ID判断购物车列表中是否存在该商家的购物车	
 				Cart b = null;
-				for (Cart cart : cartList) {
-					if(sellerId.equals(cart.getSellerId())){
-						b = cart;
+				if(cartList!=null){
+					for (Cart cart : cartList) {
+						if(sellerId.equals(cart.getSellerId())){
+							b = cart;
+						}
 					}
+				}else{
+					cartList = new ArrayList<>();
 				}
 				System.out.println("店家----"+b);
 				if(b==null){

@@ -10,9 +10,10 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfig;
 
-import com.alibaba.dubbo.config.annotation.Service;
+
 import com.pinyougou.mapper.TbGoodsDescMapper;
 import com.pinyougou.mapper.TbGoodsMapper;
 import com.pinyougou.mapper.TbItemCatMapper;
@@ -22,13 +23,8 @@ import com.pinyougou.pojo.TbGoods;
 import com.pinyougou.pojo.TbGoodsDesc;
 import com.pinyougou.pojo.TbItem;
 import com.pinyougou.pojo.TbItemExample;
-import com.pinyougou.pojogroup.Goods;
-
-import freemarker.core.ParseException;
 import freemarker.template.Configuration;
-import freemarker.template.MalformedTemplateNameException;
 import freemarker.template.Template;
-import freemarker.template.TemplateNotFoundException;
 @Service
 public class ItemPageServiceImpl implements ItemPageService {
 

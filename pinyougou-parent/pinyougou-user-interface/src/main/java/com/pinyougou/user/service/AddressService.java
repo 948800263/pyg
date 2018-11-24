@@ -1,4 +1,4 @@
-package com.pinyougou.sellergoods.service;
+package com.pinyougou.user.service;
 import java.util.List;
 import com.pinyougou.pojo.TbAddress;
 
@@ -10,6 +10,13 @@ import entity.PageResult;
  */
 public interface AddressService {
 
+	/**
+	 * 根据用户查询地址
+	 * @param userId
+	 * @return
+	 */
+	public List<TbAddress> findListByUserId(String userId );
+	
 	/**
 	 * 返回全部列表
 	 * @return

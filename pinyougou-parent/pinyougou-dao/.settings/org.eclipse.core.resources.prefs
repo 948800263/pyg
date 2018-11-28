@@ -1,3 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
+encoding//src/main/resources/filter/db_dev.properties=UTF-8
+encoding//src/main/resources/filter/db_pro.properties=UTF-8
+encoding//src/main/resources/properties/db.properties=UTF-8
+encoding//src/main/resources/spring/applicationContext-dao.xml=UTF-8
 encoding//src/test/java=UTF-8

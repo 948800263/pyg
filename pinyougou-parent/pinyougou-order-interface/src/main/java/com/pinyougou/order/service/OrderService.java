@@ -1,6 +1,7 @@
 package com.pinyougou.order.service;
 import java.util.List;
 import com.pinyougou.pojo.TbOrder;
+import com.pinyougou.pojo.TbPayLog;
 
 import entity.PageResult;
 /**
@@ -16,6 +17,13 @@ public interface OrderService {
 	 */
 	public List<TbOrder> findAll();
 	
+	/**
+	 * 修改订单状态
+	 * @param out_trade_no 支付订单号
+	 * @param transaction_id 微信返回的交易流水号
+	 */
+	public void updateOrderStatus(String out_trade_no,String transaction_id);
+	public TbPayLog searchPayLogFromRedis(String userId);
 	
 	/**
 	 * 返回分页列表
